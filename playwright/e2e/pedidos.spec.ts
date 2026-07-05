@@ -11,12 +11,12 @@ test('deve consultar um pedido aprovado', async ({ page }) => {
   //Checkpoint 2: Verificar se a página de consulta de pedidos está visível
   await expect(page.getByRole('heading')).toContainText('Consultar Pedido');
 
-  await page.getByTestId('search-order-id').fill('VLO-O6AO81');
+  await page.getByTestId('search-order-id').fill('VLO-QQEIZU');
 
   await page.getByTestId('search-order-button').click();
   
   await expect(page.getByTestId('order-result-id')).toBeVisible();
-  await expect(page.getByTestId('order-result-id')).toContainText('VLO-O6AO81');
+  await expect(page.getByTestId('order-result-id')).toContainText('VLO-QQEIZU');
 
   await expect(page.getByTestId('order-result-status')).toBeVisible();
   await expect(page.getByTestId('order-result-status')).toContainText('APROVADO');
